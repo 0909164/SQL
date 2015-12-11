@@ -18,3 +18,4 @@ PRIMARY KEY (mid),
 CONSTRAINT afdeling FOREIGN KEY (afdeling)
 REFERENCES afdeling
 );
+potato

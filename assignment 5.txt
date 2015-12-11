@@ -11,7 +11,7 @@ CREATE TABLE Medewerker
 achternaam CHAR(30) NOT NULL,
 roepnaam CHAR (15),
 geboortedatum DATE NOT NULL,
-emailadres CHAR(30),
+emailaddress CHAR(30),
 afdeling int,
 UNIQUE (emailadres),
 PRIMARY KEY (mid),

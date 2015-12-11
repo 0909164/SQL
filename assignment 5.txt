@@ -1,0 +1,20 @@
+CREATE TABLE afdeling
+(aid int,
+afdelingsnaam CHAR(15) NOT NULL,
+locatie CHAR(15) NOT NULL,
+UNIQUE (afdelingsnaam, locatie),
+PRIMARY KEY (aid)
+);
+
+CREATE TABLE Medewerker
+(mid INT,
+achternaam CHAR(30) NOT NULL,
+roepnaam CHAR (15),
+geboortedatum DATE NOT NULL,
+emailadres CHAR(30),
+afdeling int,
+UNIQUE (emailadres),
+PRIMARY KEY (mid),
+CONSTRAINT afdeling FOREIGN KEY (afdeling)
+REFERENCES afdeling
+);

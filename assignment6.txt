@@ -1,0 +1,46 @@
+CREATE TABLE Trip
+(tid int PRIMARY KEY,
+destination char(20),
+price real,
+UNIQUE (destination));
+
+CREATE TABLE Customer
+(cid int PRIMARY KEY,
+name char(20) NOT NULL);
+
+CREATE TABLE booking
+(bid int PRIMARY KEY,
+cid int,
+tid int,
+departure_date date,
+number_of_persons int,
+CONSTRAINT cid FOREIGN KEY (cid)
+REFERENCES customer,
+CONSTRAINT tid FOREIGN KEY (tid)
+REFERENCES trip);
+
+
+INSERT INTO trip(tid, destination, price)
+VALUES	('101' , 'Rome', '175'),
+	('102' , 'Praque', '250'),
+	('103' , 'Vienna', '200'),
+	('104' , 'London', '125');
+
+INSERT INTO customer(cid, name)
+VALUES	('11' , 'Ankers'),
+	('12' , 'Bessema'),
+	('13' , 'Cremer'),
+	('14' , 'Drievliet');
+
+INSERT INTO booking(bid, cid, tid, departure_date, number_of_persons)
+VALUES	('1' , '11', '102', '2015-12-23', '3'),
+	('2' , '12', '102', '2015-12-25', '2'),
+	('3' , '12', '103', '2016-1-1', '2'),
+	('4' , '13', '104', '2016-1-3', '1');
+
+DELETE FROM booking WHERE cid = 11;
+DELETE FROM booking WHERE cid = 13;
+ALTER TABLE booking drop CONSTRAINT cid;
+ALTER TABLE booking drop CONSTRAINT tid;
+UPDATE Trip SET tid = 202 WHERE tid = 103;
+UPDATE Booking SET tid = 202 WHERE tid = 103;

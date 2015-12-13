@@ -24,7 +24,7 @@ def range(start, end):
 def foo(start,end):
     list = Empty()
     if start < end:
-        list = range(start+1,end)
+        list = Node(start,foo(start+1,end))
     else:
         list = Node(end,list)
     return list

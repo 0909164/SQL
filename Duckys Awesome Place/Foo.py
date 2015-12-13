@@ -30,6 +30,6 @@ def foo(start,end):
     return list
 
 print("Teacher Wrong Code")
-print(range(1,4))
+print(range(1,3))
 print("Awesome Ducky right Code")
-print(foo(1,4))
+print(foo(1,3))

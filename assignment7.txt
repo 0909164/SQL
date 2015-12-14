@@ -1,0 +1,29 @@
+CREATE TABLE chauffeur
+(chauffeurnr int PRIMARY KEY,
+name char(20)
+);
+
+CREATE TABLE destination
+(destination_code int PRIMARY KEY,
+name char(20),
+province char(20)
+);
+
+CREATE TABLE car
+(car_nr int PRIMARY KEY,
+license_nr int,
+capacity int
+);
+
+CREATE TABLE trip
+(date DATE,
+chauffeurnr int,
+destination_code int,
+car_nr int,
+CONSTRAINT chauffeurnr FOREIGN KEY (chauffeurnr)
+REFERENCES chauffeur,
+CONSTRAINT destination_code FOREIGN KEY (destination_code)
+REFERENCES destination,
+CONSTRAINT car_nr FOREIGN KEY (car_nr)
+REFERENCES car
+);

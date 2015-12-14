@@ -1,0 +1,15 @@
+CREATE TABLE price_update_list
+(department char(20),
+product_code int,
+aisle_nr int,
+price int,
+unit_of_measure char(5)
+);
+
+
+INSERT INTO price_update_list(department, prodcut_code, aisle_nr, price, unit_of_measure)
+VALUES	('Produce', '4081', '1', '0.35', 'lb'),
+	('Produce', '4027', '1', '0.90', 'lb'),
+	('Produce', '4108', '1', '1.99', 'lb'),
+	(' ', ' ', ' ', ' ', ' '),
+	('Produce', '4081', '1', '0.35', 'lb'),
